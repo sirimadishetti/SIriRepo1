@@ -1,24 +1,11 @@
-# 01_05-manual-approvals-and-environments
-Use these files to test a manual deployment using environments protection rules.
+# 02-03-run-a-job-with-a-matrix-strategy
+Use these files to demonstrate running a job with a matrix strategy.
 
-## Set up the Workflow
 1. Create a new repo.
-2. Add the files from this directory to the root of the new repo.
-3. Move the file `manual-approval.yml` into the `.github/workflows` directory in the new repo.
-4. Once the file is commited, the workflow should be triggered by a `push` event.
-5. Confirm the workflow runs as expected and includes output for two jobs, **development** and **production**.
-
-## Add a Reviewer and a Manual Approval
-1. Modify the repo settings.  Go to: `Settings` -> `Environments` -> `production`.
-1. Select the check-box next to `Required reviewers`.
-1. Add your username as a reviewer.
-1. Click `Save protection rules`.
-
-## Rerun the Workflow
-1. Go to the `Actions` tab and select the workflow.
-1. Click the `Run workflow` drop-down and then click the `Run workflow` button.
-1. Open the workflow run that you just started (you may need to refresh the screen to see it).
-1. Note the message requesting a review.
-1. Click `Review deployments`
-1. Clik the check-box next to `production`, add a comment, and click `Approve and deploy`.
-1. Wait for the workflow to complete and review the output.
+1. Add the files from this directory to the root of the new repo.
+1. Move the `nodejs-matrix.yml` file into the `.github/workflows` directory in the new repo.
+1. On the **Actions** tab, use the dispatch trigger to run the workflow.
+1. Wait until the workflow completes.
+1. Review the output of the workflow to see the combination of jobs.
+1. Review the output of a few jobs to see how the matrix configurations for platform and node version were applied.
+1. Also, review the output of the test step to see the differences for each platform.
